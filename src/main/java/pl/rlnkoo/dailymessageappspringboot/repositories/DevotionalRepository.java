@@ -11,4 +11,5 @@ public interface DevotionalRepository extends JpaRepository<Devotional, Long> {
 
     Optional<Devotional> findByPublishedAt(LocalDate date);
 
+    Optional<Devotional> findById(Integer id);
 }
