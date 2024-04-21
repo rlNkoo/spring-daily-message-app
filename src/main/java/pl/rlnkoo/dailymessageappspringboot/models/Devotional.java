@@ -1,22 +1,27 @@
 package pl.rlnkoo.dailymessageappspringboot.models;
 
-import jakarta.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Devotional {
+public class Devotional implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    Long id;
+    Integer id;
 
     String quote;
 
@@ -36,24 +41,8 @@ public class Devotional {
     @Override
     public String toString() {
         return String.format("Devotional{id=%d, imagePath='%s', quote='%s', author='%s', content='%s', createdAt='%s', updatedAt='%s', publishedAt='%s'}",
-        id, imagePath, quote, author, content, createdAt, updatedAt, publishedAt);
+                id, imagePath, quote, author, content, createdAt, updatedAt, publishedAt);
     }
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
